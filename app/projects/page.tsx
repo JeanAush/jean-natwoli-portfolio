@@ -10,7 +10,7 @@ const projects: Project[] = [
     title: "NCIC Finance & Procurement System",
     category: "Enterprise App",
     description: "An internal application used to handle organizational payments, including payroll processing and vendor payments. Built with high-security standards to ensure accurate financial tracking and reporting.",
-    tags: ["Payments", "Payroll", "Internal Tools", "Secure Data"]
+    tags: ["Next.js", "Paystack", "Microsoft Dynamics 365"]
   },
   {
     title: "Payment Gateway Integrations",
@@ -22,7 +22,7 @@ const projects: Project[] = [
     title: "CEO Schedule & Board Voting App",
     category: "Enterprise App",
     description: "An internal app to manage the CEO's schedule, set up Commissioners' board meetings, enable secure digital voting during meetings, and store meeting documents securely.",
-    tags: ["Scheduling", "Voting System", "Document Security"]
+    tags: ["Expo Go", "MySQL", "Mailjet", "Advanta SMS"]
   },
   {
     title: "NCIC Data Management System",
@@ -34,19 +34,19 @@ const projects: Project[] = [
     title: "NCIC Performance Appraisal System",
     category: "Enterprise App",
     description: "A comprehensive HR tool used to track, manage, and evaluate employee performance across the organization.",
-    tags: ["HR Tech", "Internal Tools"]
+    tags: ["Django", "Microsoft Dynamics 365"]
   },
   {
     title: "NCIC Early Warning System (EWS)",
     category: "Web Platform",
     description: "Public-facing platform (ews.cohesion.go.ke) used to track and report early warning signs of conflict to promote national cohesion.",
-    tags: ["Public Web", "Data Tracking"]
+    tags: ["Social Crawl", "Acled API"]
   },
   {
     title: "NCIC Main Website",
     category: "Web Platform",
     description: "Designed and developed the primary organizational website (cohesion.go.ke) to reflect the brand and mandate of NCIC.",
-    tags: ["CMS", "Web Development"]
+    tags: ["Express.js", "Web Development"]
   },
   {
     title: "Amani Clubs Website",

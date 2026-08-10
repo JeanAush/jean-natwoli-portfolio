@@ -15,9 +15,13 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-bg/80 backdrop-blur-xl border-b border-border" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="font-mono text-lg font-bold text-white tracking-tight">
-          <span className="text-accent">{"<"}</span>Jean Natwoli<span className="text-accent">{"/>"}</span>
+        {/* Upgraded Logo */}
+        <Link href="/" className="font-mono text-lg font-bold text-white tracking-tight flex items-center gap-1">
+          <span className="text-accent-light">&lt;</span>
+          Jean Natwoli
+          <span className="text-accent-light">/&gt;</span>
         </Link>
+        
         <div className="hidden md:flex gap-8 items-center">
           <Link href="/" className="text-sm text-gray-400 hover:text-white transition-colors">Home</Link>
           <Link href="/about" className="text-sm text-gray-400 hover:text-white transition-colors">About</Link>

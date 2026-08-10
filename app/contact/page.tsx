@@ -114,7 +114,6 @@ export default function Contact() {
           
           {/* Honeypot spam protection */}
           <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
-
           <button 
             type="submit" 
             disabled={isLoading} 
