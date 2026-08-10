@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner"; 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Navbar />
         <main className="relative min-h-screen z-10">{children}</main>
         <Footer />
+        <Toaster position="top-right" theme="dark" richColors />
       </body>
     </html>
   );

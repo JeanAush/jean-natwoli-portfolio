@@ -1,6 +1,46 @@
-import { Mail, Phone, Send } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Mail, Phone, Send, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 export default function Contact() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "w3f_d95ac275756ca2f53cccb92f976d2689d86846fd817c7c75");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Message sent successfully!", {
+          description: "I'll get back to you as soon as possible.",
+        });
+        e.currentTarget.reset(); // Clear the form
+      } else {
+        toast.error("Something went wrong.", {
+          description: data.message || "Please try again later.",
+        });
+      }
+    } catch (error) {
+      toast.error("Network error.", {
+        description: "Please check your connection and try again.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="pt-32 pb-20 max-w-7xl mx-auto px-6">
       <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
@@ -37,33 +77,58 @@ export default function Contact() {
           </div>
         </div>
 
-        <form className="glass-panel p-8 flex flex-col gap-5">
+        <form onSubmit={handleSubmit} className="glass-panel p-8 flex flex-col gap-5">
           <div>
-            <label className="text-xs text-gray-500 uppercase tracking-wider mb-2 block">Your Name</label>
+            <label htmlFor="name" className="text-xs text-gray-500 uppercase tracking-wider mb-2 block">Your Name</label>
             <input 
+              id="name"
+              name="name" 
               type="text" 
               placeholder="John Doe" 
+              required
               className="w-full bg-white/[0.03] border border-border rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
             />
           </div>
           <div>
-            <label className="text-xs text-gray-500 uppercase tracking-wider mb-2 block">Your Email</label>
+            <label htmlFor="email" className="text-xs text-gray-500 uppercase tracking-wider mb-2 block">Your Email</label>
             <input 
+              id="email"
+              name="email"
               type="email" 
               placeholder="john@company.com" 
+              required
               className="w-full bg-white/[0.03] border border-border rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
             />
           </div>
           <div>
-            <label className="text-xs text-gray-500 uppercase tracking-wider mb-2 block">Project Details</label>
+            <label htmlFor="message" className="text-xs text-gray-500 uppercase tracking-wider mb-2 block">Project Details</label>
             <textarea 
+              id="message"
+              name="message"
               placeholder="Tell me about your requirements..." 
               rows={5}
+              required
               className="w-full bg-white/[0.03] border border-border rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none"
             ></textarea>
           </div>
-          <button type="submit" className="btn-primary w-full justify-center mt-2">
-            Send Message <Send size={16} />
+          
+          {/* Honeypot spam protection */}
+          <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
+          <button 
+            type="submit" 
+            disabled={isLoading} 
+            className="btn-primary w-full justify-center mt-2 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isLoading ? (
+              <>
+                <Loader2 size={16} className="animate-spin" /> Sending...
+              </>
+            ) : (
+              <>
+                Send Message <Send size={16} />
+              </>
+            )}
           </button>
         </form>
       </div>
