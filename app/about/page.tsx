@@ -12,7 +12,7 @@ export default function About() {
             I am a Software Developer currently engineering critical systems at the National Cohesion and Integration Commission (NCIC) Kenya. My work spans across the full stack, from designing database architectures to deploying intuitive user interfaces.
           </p>
           <p>
-            During my tenure at NCIC, I&apos;ve spearheaded the development of high-stakes internal applications, including a secure Finance and Procurement system handling payroll and vendor payments, a digital voting system for Commission board meetings, and comprehensive data management tools integrated with RStudio.
+            During my time at NCIC, I&apos;ve spearheaded the development of high-stakes internal applications, including a secure Finance and Procurement system handling payroll and vendor payments, a digital voting system for Commission board meetings, and comprehensive data management tools integrated with RStudio.
           </p>
           <p>
             My approach is rooted in writing clean, maintainable, and highly secure code. Whether I am building a public-facing website or an internal HR appraisal system, I focus on scalability, performance, and user experience.

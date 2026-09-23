@@ -9,32 +9,41 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setIsLoading(true);
 
-    const formData = new FormData(e.currentTarget);
-    formData.append("access_key", "w3f_d95ac275756ca2f53cccb92f976d2689d86846fd817c7c75");
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+    payload.access_key = "w3f_d95ac275756ca2f53cccb92f976d2689d86846fd817c7c75";
+    payload.subject = "New portfolio contact message";
+    payload.from_name = "Jean Natwoli Portfolio";
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("https://api.w3forms.com/submit", {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
 
-      if (data.success) {
+      if (response.ok && data.success) {
         toast.success("Message sent successfully!", {
           description: "I'll get back to you as soon as possible.",
         });
-        e.currentTarget.reset(); // Clear the form
+        form.reset();
       } else {
         toast.error("Something went wrong.", {
-          description: data.message || "Please try again later.",
+          description:
+            data.error || data.message || data.body?.message || "Please try again later.",
         });
       }
-    } catch (error) {
+    } catch {
       toast.error("Network error.", {
-        description: "Please check your connection and try again.",
+        description: "Please check your connection and try again, or email natwolijean@gmail.com directly.",
       });
     } finally {
       setIsLoading(false);
