@@ -54,12 +54,6 @@ const projects: Project[] = [
     description: "Platform for Amani Clubs (amaniclubs.cohesion.go.ke) to engage youth and schools in peace-building activities.",
     tags: ["Web Development", "Community"]
   },
-  {
-    title: "Amuse Kenya Website",
-    category: "Web Platform",
-    description: "Developed amusekenya.co.ke, a platform dedicated to entertainment and events in Kenya.",
-    tags: ["Web Development", "Events"]
-  }
 ];
 
 export default function Projects() {

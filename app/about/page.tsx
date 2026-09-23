@@ -30,7 +30,7 @@ export default function About() {
               <div className="flex justify-between"><span className="text-gray-500">frontend:</span><span className="text-accent-light">ReactJS, Next.js, Flutter</span></div>
               <div className="flex justify-between"><span className="text-gray-500">backend:</span><span className="text-accent-light">Node.js, Django, Flask, PHP</span></div>
               <div className="flex justify-between"><span className="text-gray-500">database:</span><span className="text-accent-light">PostgreSQL, MySQL</span></div>
-              <div className="flex justify-between"><span className="text-gray-500">devops:</span><span className="text-accent-light">AWS, Jenkins</span></div>
+              <div className="flex justify-between"><span className="text-gray-500">devops:</span><span className="text-accent-light">AWS, jenkins, Docker, Kubernetes</span></div>
               <div className="flex justify-between"><span className="text-gray-500">payments:</span><span className="text-accent-light">Mpesa, Paystack</span></div>
               <div className="flex justify-between"><span className="text-gray-500">data:</span><span className="text-accent-light">RStudio, Python</span></div>
             </div>

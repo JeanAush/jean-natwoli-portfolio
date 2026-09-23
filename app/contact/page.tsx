@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, Send, Loader2 } from "lucide-react";
+import { Mail, Phone, Send, Loader2, Code2 } from "lucide-react";
 import { toast } from "sonner";
 
 export default function Contact() {
@@ -81,6 +81,21 @@ export default function Contact() {
               <div>
                 <h4 className="text-xs text-gray-500 uppercase tracking-wider">Email</h4>
                 <span className="text-white font-medium">natwolijean@gmail.com</span>
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/JeanAush"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-4 glass-panel hover:border-accent/30 transition-all group"
+            >
+              <div className="p-3 rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all">
+                <Code2 size={20} />
+              </div>
+              <div>
+                <h4 className="text-xs text-gray-500 uppercase tracking-wider">GitHub</h4>
+                <span className="text-white font-medium">github.com/JeanAush</span>
               </div>
             </a>
           </div>
