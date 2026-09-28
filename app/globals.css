@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   
   /* Futuristic SaaS Palette */
   --color-bg: #050508;
@@ -15,11 +15,13 @@
 
 body {
   @apply bg-bg text-gray-300 antialiased;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.018), transparent 28rem);
+  min-height: 100vh;
 }
+
+* { scroll-margin-top: 6rem; }
+a, button { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--color-accent-light); outline-offset: 3px; }
 
 @layer components {
   .glass-panel {
@@ -33,8 +35,21 @@ body {
     @apply bg-transparent text-gray-200 border border-border px-6 py-3 rounded-lg font-medium transition-all hover:bg-white/5 hover:text-white inline-flex items-center gap-2;
   }
   .tech-tag {
-    @apply font-mono text-xs text-accent-light bg-accent/10 border border-accent/20 px-3 py-1 rounded-full;
+    @apply font-mono text-[11px] text-accent-light bg-accent/10 border border-accent/20 px-2.5 py-1 rounded-full;
   }
+  .section-kicker {
+    @apply mb-3 font-mono text-[11px] tracking-[0.18em] text-accent-light;
+  }
+  .section-title {
+    @apply text-3xl font-semibold tracking-tight text-white sm:text-4xl;
+  }
+  .nav-link {
+    @apply text-sm text-gray-400 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-light;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
 
 /* Custom scrollbar */

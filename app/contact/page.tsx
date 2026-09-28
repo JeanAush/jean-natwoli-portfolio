@@ -54,13 +54,13 @@ export default function Contact() {
     <div className="pt-32 pb-20 max-w-7xl mx-auto px-6">
       <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
       
-      <h2 className="font-mono text-sm text-accent-light mb-4 tracking-widest">// INITIATE_CONTACT</h2>
-      <h1 className="text-4xl md:text-5xl font-bold text-white mb-12">Let&apos;s build something exceptional.</h1>
+      <h2 className="font-mono text-sm text-accent-light mb-4 tracking-widest">{"// INITIATE_CONTACT"}</h2>
+      <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">Let&apos;s Build Something That Works.</h1>
       
       <div className="grid md:grid-cols-2 gap-12">
         <div className="space-y-8">
           <p className="text-lg text-gray-400 leading-relaxed">
-            I am currently available for new projects and consulting opportunities. If you need a reliable engineer to architect your next platform, integrate complex payment systems, or build internal tools, let&apos;s talk.
+            Have an enterprise system, integration, data platform, or digital product in mind? I&apos;m available for software engineering opportunities, consulting engagements, and selected development projects. Tell me what you&apos;re building, what problem you&apos;re trying to solve, and where you are in the process.
           </p>
 
           <div className="space-y-4">
@@ -100,7 +100,7 @@ export default function Contact() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/jeanauma"
+              href="https://www.linkedin.com/in/jeanauma/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 p-4 glass-panel hover:border-accent/30 transition-all group"
@@ -123,7 +123,7 @@ export default function Contact() {
               id="name"
               name="name" 
               type="text" 
-              placeholder="Conrad Kibet" 
+              placeholder="Your name" 
               required
               className="w-full bg-white/[0.03] border border-border rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
             />
@@ -134,7 +134,7 @@ export default function Contact() {
               id="email"
               name="email"
               type="email" 
-              placeholder="conrad@company.com" 
+              placeholder="you@example.com" 
               required
               className="w-full bg-white/[0.03] border border-border rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
             />
