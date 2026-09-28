@@ -1,81 +1,15 @@
-interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  category: string;
-}
+import type { Metadata } from "next";
+import ProjectCard from "@/components/ProjectCard";
+import { projects } from "@/lib/projects";
 
-const projects: Project[] = [
-  {
-    title: "NCIC Finance & Procurement System",
-    category: "Enterprise App",
-    description: "An internal application used to handle organizational payments, including payroll processing and vendor payments. Built with high-security standards to ensure accurate financial tracking and reporting.",
-    tags: ["Next.js", "Paystack", "Microsoft Dynamics 365"]
-  },
-  {
-    title: "Payment Gateway Integrations",
-    category: "Integrations",
-    description: "Successfully integrated Mpesa APIs and card payment processing via Paystack into various applications, enabling seamless C2B and B2B transactions.",
-    tags: ["Mpesa", "Paystack", "Node.js", "Django"]
-  },
-  {
-    title: "CEO Schedule & Board Voting App",
-    category: "Enterprise App",
-    description: "An internal app to manage the CEO's schedule, set up Commissioners' board meetings, enable secure digital voting during meetings, and store meeting documents securely.",
-    tags: ["Expo Go", "MySQL", "Mailjet", "Advanta SMS"]
-  },
-  {
-    title: "NCIC Data Management System",
-    category: "Data Engineering",
-    description: "An application used for filling, cleaning up, and analyzing data. Integrated with RStudio for advanced statistical analysis and reporting.",
-    tags: ["Data Analysis", "RStudio", "Python"]
-  },
-  {
-    title: "NCIC Performance Appraisal System",
-    category: "Enterprise App",
-    description: "A comprehensive HR tool used to track, manage, and evaluate employee performance across the organization.",
-    tags: ["Django", "Microsoft Dynamics 365"]
-  },
-  {
-    title: "NCIC Early Warning System (EWS)",
-    category: "Web Platform",
-    description: "Public-facing platform (ews.cohesion.go.ke) used to track and report early warning signs of conflict to promote national cohesion.",
-    tags: ["Social Crawl", "Acled API"]
-  },
-  {
-    title: "NCIC Main Website",
-    category: "Web Platform",
-    description: "Designed and developed the primary organizational website (cohesion.go.ke) to reflect the brand and mandate of NCIC.",
-    tags: ["Express.js", "Web Development"]
-  },
-  {
-    title: "Amani Clubs Website",
-    category: "Web Platform",
-    description: "Platform for Amani Clubs (amaniclubs.cohesion.go.ke) to engage youth and schools in peace-building activities.",
-    tags: ["Web Development", "Community"]
-  },
-];
+export const metadata: Metadata = { title: "Projects | Jean Natwoli", description: "Enterprise systems, payment integrations, data platforms, and public websites built and supported by Jean Natwoli." };
 
 export default function Projects() {
-  return (
-    <div className="pt-32 pb-20 max-w-7xl mx-auto px-6">
-      <h2 className="font-mono text-sm text-accent-light mb-4 tracking-widest">// FEATURED_WORK</h2>
-      <h1 className="text-4xl md:text-5xl font-bold text-white mb-12">Selected Projects & Systems</h1>
-      
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <div key={index} className="glass-panel p-8 flex flex-col group hover:bg-white/[0.05] transition-all duration-300 hover:shadow-[0_0_40px_-10px_var(--color-accent-glow)]">
-            <span className="font-mono text-xs text-accent-light mb-4">{project.category}</span>
-            <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-accent-light transition-colors">{project.title}</h3>
-            <p className="text-gray-400 flex-grow mb-6 leading-relaxed text-sm">{project.description}</p>
-            <div className="flex flex-wrap gap-2">
-              {project.tags.map((tag, i) => (
-                <span key={i} className="tech-tag">{tag}</span>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  const featured = projects.filter((project) => project.featured);
+  const additional = projects.filter((project) => !project.featured);
+  return <div className="mx-auto max-w-7xl px-6 pb-20 pt-28 sm:pt-36">
+    <header className="mb-12 max-w-3xl"><p className="section-kicker">SELECTED ENGINEERING WORK</p><h1 className="section-title text-4xl sm:text-5xl">Projects & Systems</h1><p className="mt-4 leading-relaxed text-gray-400">A selection of enterprise applications, integrations, data tools, and public platforms. Project descriptions reflect the information currently available.</p></header>
+    <section aria-labelledby="featured-projects"><h2 id="featured-projects" className="mb-5 font-mono text-xs tracking-widest text-accent-light">FEATURED SYSTEMS</h2><div className="grid gap-5 md:grid-cols-2">{featured.map((project) => <ProjectCard key={project.id} project={project} />)}</div></section>
+    <section className="mt-16" aria-labelledby="more-projects"><h2 id="more-projects" className="mb-5 font-mono text-xs tracking-widest text-accent-light">ADDITIONAL SYSTEMS</h2><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{additional.map((project) => <ProjectCard key={project.id} project={project} />)}</div></section>
+  </div>;
 }

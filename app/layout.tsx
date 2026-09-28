@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/sonner"; 
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
-
 export const metadata: Metadata = {
-  title: "Jean Natwoli | Software Engineer",
-  description: "Portfolio of Jean Natwoli, a Full-Stack Software Engineer specializing in scalable architecture, enterprise systems, and secure integrations.",
+  title: { default: "Jean Natwoli | Full-Stack Software Engineer", template: "%s | Jean Natwoli" },
+  description: "Jean Natwoli is a Kenya-based Full-Stack Software Engineer building enterprise systems, payment integrations, APIs, data platforms, and cloud-enabled applications.",
+  keywords: ["Jean Natwoli", "Full-Stack Software Engineer", "Kenya", "enterprise systems", "payment integrations", "APIs", "cloud engineering"],
+  openGraph: {
+    title: "Jean Natwoli | Full-Stack Software Engineer",
+    description: "Engineering enterprise systems, payment integrations, APIs, and data platforms in Kenya.",
+    type: "website",
+    locale: "en_KE",
+  },
+  twitter: { card: "summary", title: "Jean Natwoli | Full-Stack Software Engineer", description: "Enterprise systems, payment integrations, APIs, and data platforms." },
+  alternates: { types: { "application/pdf": "/Jean-Natwoli-CV.pdf" } },
 };
 
 export default function RootLayout({
@@ -19,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en">
       <body className="font-sans">
         <Navbar />
         <main className="relative min-h-screen z-10">{children}</main>

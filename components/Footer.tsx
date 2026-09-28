@@ -1,15 +1,3 @@
 export default function Footer() {
-  return (
-    <footer className="border-t border-border mt-20 py-10 relative z-10">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="font-mono text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} Jean Natwoli. All systems operational.
-        </p>
-        <div className="flex gap-6 text-sm">
-          <a href="mailto:natwolijean@gmail.com" className="text-gray-200 font-medium hover:text-accent-light transition-colors">natwolijean@gmail.com</a>
-          <a href="tel:+254759304400" className="text-gray-200 font-medium hover:text-accent-light transition-colors">+254 759 304 400</a>
-        </div>
-      </div>
-    </footer>
-  );
+  return <footer className="relative z-10 mt-16 border-t border-border py-8"><div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 md:flex-row md:items-center md:justify-between"><div><p className="font-mono text-xs text-gray-400">&copy; 2026 Jean Natwoli. All systems operational.</p><p className="mt-2 text-xs text-gray-500">Based in Kenya · Available worldwide</p></div><nav aria-label="Footer links" className="flex flex-wrap gap-x-5 gap-y-3 text-sm"><a className="nav-link" href="https://github.com/JeanAush" target="_blank" rel="noopener noreferrer">GitHub</a><a className="nav-link" href="https://www.linkedin.com/in/jeanauma/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a className="nav-link" href="mailto:natwolijean@gmail.com">Email</a><a className="nav-link" href="/Jean-Natwoli-CV.pdf" download>Download CV</a></nav></div></footer>;
 }
