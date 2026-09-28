@@ -7,7 +7,7 @@ export default function Footer() {
         </p>
         <div className="flex gap-6 text-sm">
           <a href="mailto:natwolijean@gmail.com" className="text-gray-200 font-medium hover:text-accent-light transition-colors">natwolijean@gmail.com</a>
-          <a href="tel:0759304400" className="text-gray-200 font-medium hover:text-accent-light transition-colors">0759304400</a>
+          <a href="tel:+254759304400" className="text-gray-200 font-medium hover:text-accent-light transition-colors">+254 759 304 400</a>
         </div>
       </div>
     </footer>
