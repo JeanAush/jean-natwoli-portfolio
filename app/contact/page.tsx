@@ -64,13 +64,13 @@ export default function Contact() {
           </p>
 
           <div className="space-y-4">
-            <a href="tel:0759304400" className="flex items-center gap-4 p-4 glass-panel hover:border-accent/30 transition-all group">
+            <a href="tel:+254759304400" className="flex items-center gap-4 p-4 glass-panel hover:border-accent/30 transition-all group">
               <div className="p-3 rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all">
                 <Phone size={20} />
               </div>
               <div>
                 <h4 className="text-xs text-gray-500 uppercase tracking-wider">Phone</h4>
-                <span className="text-white font-medium">0759304400</span>
+                <span className="text-white font-medium">+254 759 304 400</span>
               </div>
             </a>
 
