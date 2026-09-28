@@ -98,6 +98,21 @@ export default function Contact() {
                 <span className="text-white font-medium">github.com/JeanAush</span>
               </div>
             </a>
+
+            <a
+              href="https://www.linkedin.com/in/jeanauma"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-4 glass-panel hover:border-accent/30 transition-all group"
+            >
+              <div className="p-3 rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all">
+                <span className="font-bold text-lg leading-none" aria-hidden="true">in</span>
+              </div>
+              <div>
+                <h4 className="text-xs text-gray-500 uppercase tracking-wider">LinkedIn</h4>
+                <span className="text-white font-medium">linkedin.com/in/jeanauma</span>
+              </div>
+            </a>
           </div>
         </div>
 
@@ -108,7 +123,7 @@ export default function Contact() {
               id="name"
               name="name" 
               type="text" 
-              placeholder="John Doe" 
+              placeholder="Conrad Kibet" 
               required
               className="w-full bg-white/[0.03] border border-border rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
             />
@@ -119,7 +134,7 @@ export default function Contact() {
               id="email"
               name="email"
               type="email" 
-              placeholder="john@company.com" 
+              placeholder="conrad@company.com" 
               required
               className="w-full bg-white/[0.03] border border-border rounded-lg p-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
             />
